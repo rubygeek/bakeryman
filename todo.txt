@@ -1,6 +1,5 @@
 Order Form
 - add a way to go back to search when form is displayed
 - validation on date, make insensitive
-- add a order number, start from 1 every week
-
+- add validate before save form
 
