@@ -1,0 +1,68 @@
+<h3>New order</h3>
+
+<%= error_messages_for :customer %>
+<%= error_messages_for :order %>
+
+
+
+<div id="customer_form_id"></div>
+
+<% form_for (:bakeryorder, @bakeryorder, :url => { :action => :create } ) do |f| %>
+<table border="0">
+  <tr>
+	  <td>
+	    <b>First</b><br />
+	    <%= f.text_field :first %>
+	  </td>
+	  <td>
+	    <b>Last</b><br />
+	    <%= f.text_field :last %>
+	  </td>
+	  <td>
+	     <b>Bozo:</b><br />
+	     <%= f.check_box :bozo %>
+	  </td>
+  </tr>  
+  <tr>
+      <td>
+        <b>Home Phone</b><br />
+        <%= f.text_field :home_phone %>
+      </td>
+      <td>
+        <b>Work Phone</b><br />
+        <%= f.text_field :work_phone %>
+      </td>
+      <td>
+        <b>Cell Phone</b><br />
+        <%= f.text_field :cell_phone %>
+      </td>
+  </tr>
+
+  <tr>
+    <td>
+    <b>Pickup Date</b><br />
+    <% #calendar_date_select 'date', '', {:time => false}
+    %><br>
+    <small>Format: Month Day, Year  July 5, 2007.<br /> Default year is current</small>
+    </td>
+    
+    <td>
+    <b>Pickup Time</b><br />
+    <%= #f.text_field :pickup_time, :size => 15
+     %><br>
+    <small>Format: 8am 8:00am 8:30am 8:45am<br />
+    Must have am or pm.</small>
+    </td>
+  </tr>
+  </table>
+  
+  <p>
+    <b>Order</b><br />
+    <%= f.text_area :notes, {:rows => 15, :cols => 80}  %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end -%>
+<%= link_to 'Back', orders_path %>

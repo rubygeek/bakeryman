@@ -1,0 +1,38 @@
+
+<table border="0">
+  <tr>
+	  <td>
+	    <b>First</b><br />
+	    <%= text_field :customer, :first %>
+	  </td>
+	  <td>
+	    <b>Last</b><br />
+	    <%= text_field :customer, :last %>
+	  </td>
+	  <td>
+	     <b>Bozo:</b><br />
+	     <%= check_box :customer, :bozo %>
+	  </td>
+  </tr>  
+  <tr>
+      <td>
+        <b>Home Phone</b><br />
+        <%= text_field :customer, :home_phone %>
+      </td>
+      <td>
+        <b>Work Phone</b><br />
+        <%= text_field :customer, :work_phone %>
+      </td>
+      <td>
+        <b>Cell Phone</b><br />
+        <%= text_field :customer, :cell_phone %>
+      </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>Email</b><br/>
+      <%= text_field :customer, :email %>
+    </td>
+  </tr>
+</table>	
+

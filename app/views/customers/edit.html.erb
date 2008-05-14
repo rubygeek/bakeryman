@@ -1,0 +1,14 @@
+<h1>Editing customer</h1>
+
+<%= error_messages_for :customer %>
+
+<% form_for(:customer, :url => customer_path(@customer),:html => { :method => 'put' } ) do |f| %>
+
+	<%= render :partial => 'customers/form', :locals => { :f => f } %>	
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @customer %> |
+<%= link_to 'Back', customers_path %>

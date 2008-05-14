@@ -1,0 +1,32 @@
+<p>
+  <b>Name:</b>
+  <%=h @customer.name %>
+  <b>Bozo:</b>
+  <%=h @customer.bozo ? "Yes" : "No" %>
+</p>
+
+<p>
+  <b>Home phone:</b>
+  <%=h number_to_phone(@customer.home_phone) %>
+</p>
+
+<p>
+  <b>Work phone:</b>
+  <%=h number_to_phone(@customer.work_phone) %>
+</p>
+
+<p>
+  <b>Cell phone:</b>
+  <%=h number_to_phone(@customer.work_phone) %>
+</p>
+
+<p>
+  <b>Customer Entry Created at:</b>
+  <%=h @customer.created_at.to_s(:long) %><br>
+  <b>Customer Entry Updated at:</b>
+  <%=h @customer.updated_at.to_s(:long) if @customer.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Customer List', customers_path %>

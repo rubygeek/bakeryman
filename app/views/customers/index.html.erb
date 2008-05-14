@@ -1,0 +1,31 @@
+<h1>Listing customers</h1>
+
+<table border="1">
+  <tr>
+    <th></th>
+    <th>First</th>
+    <th>Last</th>
+    <th>Home phone</th>
+    <th>Work phone</th>
+    <th>Cell phone</th>
+    <th colspan="3"></th>
+  </tr>
+
+<% for customer in @customers %>
+  <tr <%= "style='background-color:red'" if customer.bozo%> >
+    <td><%= link_to "See Orders", {:controller => 'reports', :action =>'customer_orders', :id => customer} %></td>
+    <td><%=h customer.first %></td>
+    <td><%=h customer.last %></td>
+    <td><%=h number_to_phone(customer.home_phone)%></td>
+    <td><%=h number_to_phone(customer.work_phone)%></td>
+    <td><%=h number_to_phone(customer.cell_phone)%></td>    
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Delete', customer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New customer', new_customer_path %>

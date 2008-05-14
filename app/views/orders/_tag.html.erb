@@ -1,0 +1,7 @@
+<table border="0">
+<tr><td><%= order.customer.name %></td></tr>
+<tr><td><%= order.pickup_at.to_s(:short) %></td></tr>
+<tr><td><%= order.decorations %></td></tr>
+<tr><td><%= order.details %></td></tr>
+<tr><td>Created at: <%= order.created_at.to_s(:short) %><br><%= order.modified_at.to_s(:short) if order.modified_at %></td></tr>
+</table>

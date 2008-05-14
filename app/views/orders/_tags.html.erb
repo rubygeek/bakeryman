@@ -1,0 +1,26 @@
+<table border="1" width="800">
+
+   <tr>
+<% counter = 0; %>
+<% @orders.each do |order| %>
+
+   
+    <td>
+    
+    <table border="0">
+<tr><td><h2><%= order.customer.name %> -- <%= order.pickup_at.strftime("%a %I:%M %p") %></h2></td></tr>
+<tr><td>Decorations: <%= order.decorations %></td></tr>
+<tr><td>Baking: <%= order.details %></td></tr>
+<tr><td>Created at: <%= order.created_at.to_s(:short) %><br><%= order.modified_at.to_s(:short) if order.modified_at %></td></tr>
+<tr><td>
+</table>
+        
+    </td>
+   <% if counter % 2 == 0 %>
+    </tr><tr>
+   <% end %>
+   <% counter = counter + 1%>
+<% end %>
+</tr>
+   
+</table>

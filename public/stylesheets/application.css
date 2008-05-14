@@ -1,0 +1,25 @@
+input { border: 1px inset black; }
+
+
+.label { 
+	font-weight:bold;
+}
+
+
+
+.list_even {
+  margin:3px;
+  color:black;
+  background-color:silver;
+  
+}
+
+.list_odd {
+  margin:3px;
+  color:black ;
+  background-color:lightgray;
+}
+
+.tip {
+  color:gray;
+}

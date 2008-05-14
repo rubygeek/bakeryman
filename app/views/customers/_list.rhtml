@@ -1,0 +1,21 @@
+<%= link_to_function "Add New Customer", "$('customer_fields_form_id').style.display='block';Element.hide('customer_form_id')"  %>
+<table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Home phone</th>
+    <th>Work phone</th>
+    <th>Cell phone</th>
+  </tr>
+ 
+<% for customer in @customers %>
+  <tr <%= "style='background-color:red'" if customer.bozo%> >
+    <td><%= radio_button_tag "customer", '', false, :onclick => "$('order_customer_id').value=#{customer.id}" %></td> 	 
+    <td><%=h customer.first %> <%=h customer.last %></td>
+    <td><%=h customer.home_phone %></td>
+    <td><%=h customer.work_phone %></td>
+    <td><%=h customer.cell_phone %></td>
+  </tr>
+<% end %>
+
+</table>

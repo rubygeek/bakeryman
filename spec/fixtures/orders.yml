@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  customer_id: 1
+  pickup_at: 2007-08-25 10:26:07
+  decorations: cars
+  details: white, 7x12
+  created_at: 2007-08-25 10:26:07
+  updated_at: 2007-08-25 10:26:07
+two:
+  id: 2
+  customer_id: 2
+  pickup_at: 2007-08-25 10:26:07
+  decorations: dinos
+  details: chcolate, 10x15
+  created_at: 2007-08-25 10:26:07
+  updated_at: 2007-08-25 10:26:07

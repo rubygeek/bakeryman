@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  first: Sally
+  last: Jones
+  cell_phone: 8159231232
+  work_phone: 8153249872
+  email: sjones@gmail.com
+  bozo: false
+  notes: MyText
+  created_at: 2007-08-26 14:27:51
+  modified_at: 2007-08-26 14:27:51
+
+two:
+  id: 2
+  first: Mark
+  last: Smith 
+  cell_phone: 7093213214
+  work_phone: 8159341231
+  email: mjones@gmail.com
+  bozo: false
+  notes: MyText
+  created_at: 2007-08-26 14:27:51
+  modified_at: 2007-08-26 14:27:51
+

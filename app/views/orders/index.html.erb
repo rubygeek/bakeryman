@@ -1,0 +1,47 @@
+<h1>Orders</h1>
+
+<div>
+<%= link_to 'Enter New order', new_order_path %>
+</div>
+
+<table border="0">
+<tr>
+<td>
+
+Search: <%= text_field_tag :search %>&nbsp;<%= link_to_function "Clear", "$('search').value=''" %> <span style='display:none' id="ajax-loader1"><%= image_tag('ajax-loader.gif')%></span> 
+<%= observe_field :search,
+  :frequency => 0.5,
+  :update    => 'ajax_results_id',
+  :before    => "Element.show('ajax-loader1')",
+  :complete  => "Element.hide('ajax-loader1')",
+  :url       => search_orders_path,
+  :with      => "'search='+encodeURIComponent(value)" %>
+
+<br/>
+<div class="tip">Searches in decorations and cake details field</div>
+
+</td>
+<td><label>Pickup Date:</label>
+    <%= calendar_date_select_tag :search_pickup, '', {:time => false}%>
+<%= observe_field :search_pickup,
+  :frequency => 0.5,
+  :update    => 'ajax_results_id',
+  :before    => "Element.show('ajax-loader2')",
+  :complete  => "Element.hide('ajax-loader2')",
+  :url       => search_orders_path,
+  :with      => "'search_pickup='+encodeURIComponent(value)" %> <span style='display:none' id="ajax-loader2"><%= image_tag('ajax-loader.gif')%></span> 
+    <br>
+    <small>Format: Month Day, Year  July 5, 2007.<br /> Default year is current</small>
+</td>
+</tr>
+</table>
+
+
+<div id="ajax_results_id">
+
+<%= render :partial => 'order_table.html.erb', :layout => false  %>
+</div>
+
+<br />
+
+

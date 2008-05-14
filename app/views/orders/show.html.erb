@@ -1,0 +1,34 @@
+<p>
+  <b>Customer:</b>
+  <%=h @order.customer.name %>
+</p>
+
+<p>
+  <b>Pickup at:</b>
+  <%=h @order.pickup_at %>
+</p>
+
+<p>
+  <b>Decorations:</b>
+  <%=h @order.decorations %>
+</p>
+
+<p>
+  <b>Cake Details:</b>
+  <%=h @order.details %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @order.created_at %>
+</p>
+
+<p>
+  <b>Modified at:</b>
+  <%=h @order.updated_at %>
+</p>
+
+
+<%= link_to 'Delete', order_path(@order), :confirm => 'Are you sure?', :method => :delete %> | 
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

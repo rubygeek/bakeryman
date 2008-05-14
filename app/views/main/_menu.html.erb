@@ -1,0 +1,5 @@
+<%= link_to_unless_current "Customers", :controller => 'customers' %>&nbsp;|&nbsp;
+<%= link_to_unless_current "Orders", orders_url %>&nbsp;|&nbsp;
+<%= link_to "Orders for Today", daily_reports_url %>&nbsp;|&nbsp;
+<%= link_to "Orders for Week", weekly_reports_url %>&nbsp;|&nbsp;
+<%= link_to "Tags for Week", weeklytags_reports_url %>

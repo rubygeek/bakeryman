@@ -1,0 +1,36 @@
+<h1>Orders for <%= @customer.name%></h1>
+<hr>
+
+<%= render  "customers/show" %>
+<hr>
+<% if @orders && @orders.size == 0 %>
+  There are no orders for <%= @customer.name %>!<br><br>
+<% else %>
+
+
+<table border="1">
+  <tr>
+    <th>Pickup at</th>
+    <th>Order</th>
+    <th>Baking</th>
+    <th>Created at</th>
+    <th>Modified at</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%=h order.pickup_at.to_s(:short) %></td>
+    <td><%=h order.decorations %></td>
+    <td><%=h order.details %></td>
+    <td><%=h order.created_at.to_s(:short) %></td>
+    <td><%=h order.modified_at.to_s(:short) if order.modified_at %></td>
+    <td><%= link_to 'Show', order_path(order) %></td>
+    <td><%= link_to 'Edit', edit_order_path( order) %></td>
+    <td><%= link_to 'Delete', order, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% end %>
+<%= link_to 'New order', new_order_path %>

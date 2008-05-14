@@ -1,0 +1,63 @@
+# == Schema Information
+# Schema version: 2
+#
+# Table name: customers
+#
+#  id          :integer(11)   not null, primary key
+#  first       :string(255)   
+#  last        :string(255)   
+#  cell_phone  :string(255)   
+#  home_phone  :string(255)   
+#  work_phone  :string(255)   
+#  email       :string(255)   
+#  bozo        :boolean(1)    
+#  notes       :text          
+#  created_at  :datetime      
+#  modified_at :datetime      
+#  updated_at  :datetime      
+#
+
+# == Schema Information
+# Schema version: 2
+#
+# Table name: customers
+#
+#  id          :integer(11)   not null, primary key
+#  first       :string(255)   
+#  last        :string(255)   
+#  cell_phone  :string(255)   
+#  home_phone  :string(255)   
+#  work_phone  :string(255)   
+#  email       :string(255)   
+#  bozo        :boolean(1)    
+#  notes       :text          
+#  created_at  :datetime      
+#  modified_at :datetime      
+#  updated_at  :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  first: John
+  last: Smith
+  home_phone: 8151321234
+  cell_phone: 8159320932
+  work_phone: 8123021232
+  email: jsmith@gmail.com	
+  bozo: false
+  notes: 12in round birthday cake
+  created_at: 2007-07-20 21:35:38
+  updated_at: 2007-07-20 21:35:38
+two:
+  id: 2
+  first: Sarah	
+  last: Miller
+  home_phone: 8152344234
+  work_phone: 8159029332
+  cell_phone: 8153231123
+  email: smiller@yahoo.com
+  bozo: false
+  notes: 24 cupcakes, decorated with dinos
+  created_at: 2007-07-20 21:35:38
+  updated_at: 2007-07-20 21:35:38

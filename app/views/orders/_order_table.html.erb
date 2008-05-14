@@ -1,0 +1,45 @@
+<h2><%= @label %></h2>
+<% if @orders && @orders.size == 0 %>
+<br/>
+<br/>
+There are no orders that match that criteria!
+
+<% else %> 
+
+<form method="get">
+<%= radio_button_tag :type, "decorations" %> Decorations only
+<%= radio_button_tag :type, "baking"%> Baking only
+<%= submit_tag "Filter"%>
+</form>
+
+<table cellspacing="0" cellpadding="4" >
+  <tr>
+    <th>Number</th>
+    <th>Customer</th>
+    <th>Pickup at</th>
+    <%= "<th>Decorations</th>" if @display_decorations %>
+    <%= "<th>Baking</th>" if @display_baking %>
+    <th>Created at</th>
+    <th>Modified at</th>
+    <th colspan="3"></th>
+  </tr>
+   
+ <% @orders.each do |order| %>
+  <tr class="<%= cycle("list_odd","list_even")%>">
+    <td><%= order.order_number%></td>
+    <td><%= order.customer.name %></td>
+    <td><%=h order.pickup_at.to_s(:short) %></td>
+    <%= "<td>#{order.decorations}</td>" if @display_decorations %>
+    <%= "<td>#{order.details}</td>" if @display_baking %>
+    <td><%=h order.created_at.to_s(:short) %></td>
+    <td><%=h order.modified_at.to_s(:short) if order.modified_at %></td>
+    <td><%= link_to 'View', order_path(order) %></td>
+    <td><%= link_to 'Edit', edit_order_path( order) %></td>
+  </tr>
+
+ 
+<% end %>
+
+ </table>
+ 
+ <% end %>

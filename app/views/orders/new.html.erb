@@ -1,0 +1,55 @@
+<style type="text/css">
+#customer_fields_form_id { }
+</style>
+<h3>New order</h3>
+
+<%= error_messages_for :customer %>
+<%= error_messages_for :order %>
+
+<%= render :partial => 'customers/lookup' %>
+
+<div id="customer_form_id"></div>
+
+<% form_for :order, :url => orders_path, :html => {:onsubmit => 'check_dates'}  do |f| %>
+	
+  <% fields_for :customer, @order.customer do |customer| %>
+
+      <div id="customer_fields_form_id" style="display:none">
+      <table border="0">
+      <tr>
+    	  <td>
+    	    <b>First</b><br />
+    	    <%= customer.text_field :first %>
+    	  </td>
+    	  <td>
+    	    <b>Last</b><br />
+    	    <%= customer.text_field :last %>
+    	  </td>
+    	  <td>
+    	     <b>Bozo:</b><br />
+    	     <%= customer.check_box :bozo %>
+    	  </td>
+      </tr>  
+      <tr>
+          <td>
+            <b>Home Phone</b><br />
+            <%= customer.text_field :home_phone %>
+          </td>
+          <td>
+            <b>Work Phone</b><br />
+            <%= customer.text_field :work_phone %>
+          </td>
+          <td>
+            <b>Cell Phone</b><br />
+            <%= customer.text_field :cell_phone %>
+          </td>
+      </tr>
+    </table>	    
+    </div>
+  <% end -%>
+		
+	<%= render :partial => 'orders/form', :locals => { :f => f } %>
+
+<% end -%>
+
+<%= link_to 'Back', orders_path %>

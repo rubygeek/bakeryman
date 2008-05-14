@@ -1,0 +1,18 @@
+<h1>Editing order</h1>
+<%= error_messages_for :customer %>
+<%= error_messages_for :order %>
+
+<%= @order.customer.name %> 
+<% form_for(:order, :url =>  order_path(@order), :html => { :method => 'put' } ) do |f| %>
+
+	<%= render :partial => 'orders/form', :locals => { :f => f } %>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+</form>
+
+<%= link_to 'Show', @order %> |
+<%= link_to 'Back', orders_path %>
