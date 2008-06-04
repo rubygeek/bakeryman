@@ -10,7 +10,7 @@
 
 <div id="customer_form_id"></div>
 
-<% form_for :order, :url => orders_path, :html => {:onsubmit => 'check_dates'}  do |f| %>
+<% form_for :order, :url => orders_path, :html => {:id => 'order_form', :onSubmit => 'return validate_form()'}  do |f| %>
 	
   <% fields_for :customer, @order.customer do |customer| %>
 

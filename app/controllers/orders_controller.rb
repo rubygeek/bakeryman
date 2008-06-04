@@ -62,9 +62,15 @@ class OrdersController < ApplicationController
       end
     else
       @customer = Customer.find params[:order][:customer_id] 
-      @customer.orders.create(params[:order])
-      flash[:notice] = 'Order was successfully created.'
-      redirect_to orders_url
+      @order = @customer.orders.create(params[:order])
+      if @order.valid?
+        flash[:notice] = 'Order was successfully created.'
+        redirect_to orders_url        
+      else
+        flash[:notice] = 'Please fill in all required fields'
+        #render :text => @customer.to_yaml
+        render :action => 'new'
+      end
     end
 
       
