@@ -19,4 +19,5 @@ after :deploy, :railsplayground_link
 
 task :railsplayground_link do
   run "cd /home/nola/www; ln -s /home/nola/#{application}/current/public #{application}"
+  run "chmod 755 /home/nola/#{application}/public/dispatch.cgi"
 end
